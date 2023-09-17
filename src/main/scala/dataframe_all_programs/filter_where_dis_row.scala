@@ -13,10 +13,10 @@ object filter_where_dis_row {
 
     spark.sparkContext.setLogLevel("OFF")
     import spark.implicits._
-    val df = List((101,10,"1263nhd"),(102,20,"1633fgd"),(107,0,"2865fhf"),(104,25,"2902asd"),(105,5,"1238ajh")
+    val df = List((101,10,"1263nhd"),(102,20,"1633fgd"),(107,0,"2865fhf"),(104,25,"2902asd"),(109,5,"1238ajh")
       ,(106,5,"12877hdh")).toDF("product_id","quantity","transaction_id")
 
-    val productsToTrack = List(101, 102, 103)
+    val productsToTrack = List(101, 102, 103,109)
       df.show()
     println("product_id is in the list of products to track (e.g., [101, 102, 103])")
     df.filter(col("product_id").isin(productsToTrack:_*)).show()
