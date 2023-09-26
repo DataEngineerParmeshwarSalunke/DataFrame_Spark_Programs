@@ -8,8 +8,7 @@ object parallel_distinct {
     val sc = new SparkContext("local[8]", "salunke")
 
     val rdd = sc.parallelize(Array(1, 2, 3, 2, 1, 4, 5))
-    val distinctRdd = rdd.distinct().sortBy(f => f,ascending = true)
-
+    val distinctRdd = rdd.distinct().sortBy(f => f,false)
     distinctRdd.foreach(println)
     scala.io.StdIn.readLine()
   }
