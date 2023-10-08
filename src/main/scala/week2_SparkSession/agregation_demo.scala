@@ -7,7 +7,6 @@ object agregation_demo {
   def main(args: Array[String]): Unit = {
     Logger.getLogger("org").setLevel(Level.OFF)
     val spark = SparkSession.builder().appName("OrderDataExample").master("local").getOrCreate()
-
     import spark.implicits._
 
     val orderData = List(
@@ -18,9 +17,7 @@ object agregation_demo {
       ("Order5", "Bob", 250),
       ("Order6", "John", 400)
     ).toDF("OrderID", "Customer", "Amount")
-
     orderData.show()
-
 
     import org.apache.spark.sql.functions._
 

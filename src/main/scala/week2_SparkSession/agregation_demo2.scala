@@ -19,8 +19,6 @@ object agregation_demo2 {
       ("Bob", "English", 95)
     ).toDF("Student", "Subject", "Score")
     scoreData.show()
-
-
     import org.apache.spark.sql.functions._
     val average_score = scoreData.groupBy("Subject")
       .agg(avg("Score").alias("Avg_student"))

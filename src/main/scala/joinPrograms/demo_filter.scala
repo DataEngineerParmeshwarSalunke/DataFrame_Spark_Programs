@@ -14,7 +14,7 @@ def main(args:Array[String]):Unit= {
   filteredDF.show()
   val df1 = Seq(("Alice", "Engineer"), ("Bob", "Developer"), ("Charlie", "Manager")).toDF("name", "role")
 
-  val result = df1.filter(col("role").contains("an"))
+  val result = df1.filter(col("role").contains("er"))
   result.show()
   //an is present or not
 }
