@@ -2,7 +2,7 @@ package self_Program
 
 import org.apache.spark.sql.types.{IntegerType, StringType, StructField, StructType}
 import org.apache.spark.sql.{Row, SparkSession}
-case class user(user_id:Int, user_name: String, user_city:  String)
+case class user(user_id:Int, user_name: String, user_city: String)
 
 object create_data_frame {
   def main(args:Array[String]): Unit={
@@ -12,21 +12,21 @@ object create_data_frame {
    spark.sparkContext.setLogLevel("ERROR")
      println("Approach 1 : ")
     val user_list1 = List((1,"John","London"),
-      (2,"Martin","New York"),
-      (3,"Sam","Sydney"),
-      (4,"Alan","maxico"),
-      (5,"Jacob","florida")
+                         (2,"Martin","New York"),
+                         (3,"Sam","Sydney"),
+                         (4,"Alan","maxico"),
+                         (5,"Jacob","florida")
     )
-      val user_df = spark.createDataFrame(user_list1)//.toDF("user_id","user_name","user_city")
-    val df_schema = List("user_id","user_name","user_city")
-    //val usr_rdd = spark.sparkContext.parallelize(user_list)
-  //  val usr_df = spark.createDataFrame(usr_rdd)
-    val user_df1 = user_df.toDF(df_schema:_*)
+      val user_df = spark.createDataFrame(user_list1)   //.toDF("user_id","user_name","user_city")
+      val df_schema = List("user_id","user_name","user_city")
+     //val usr_rdd = spark.sparkContext.parallelize(user_list)
+     //  val usr_df = spark.createDataFrame(usr_rdd)
+     val user_df1 = user_df.toDF(df_schema:_*)
         user_df1.show(5,false)
 
-    println("Approach 2 : ")
+         println("Approach 2 : ")
 
-    val user_list2 = Seq(Row(1,"John","London"),
+     val user_list2 = Seq(Row(1,"John","London"),
                         Row(2,"Martin","New York"),
                         Row(3,"Sam","Sydney"),
                         Row(4,"Alan","maxico"),

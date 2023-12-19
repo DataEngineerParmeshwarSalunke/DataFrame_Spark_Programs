@@ -5,7 +5,7 @@ import org.apache.spark.SparkContext
 
 object word_Count_tolowerCase {
   def main(args: Array[String]): Unit = {
-    Logger.getLogger("org").setLevel(Level.OFF)
+   // Logger.getLogger("org").setLevel(Level.OFF)
     val sc = new SparkContext("local[8]", "salunke")
 
     val input = sc.textFile("E:/salunkeprogram/scenario.txt");

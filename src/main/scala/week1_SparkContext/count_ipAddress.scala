@@ -3,7 +3,7 @@ package week1_SparkContext
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.SparkContext
 
-object count_ipAddress {
+object  count_ipAddress {
   def main(args: Array[String]): Unit = {
     Logger.getLogger("org").setLevel(Level.ERROR)
     val sc = new SparkContext("local[8]", "salunke")

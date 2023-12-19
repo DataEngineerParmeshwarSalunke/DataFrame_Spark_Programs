@@ -8,7 +8,7 @@ import org.apache.log4j.{Level, Logger}
 //Calculate the total sales revenue for each product category, and also find the category with the highest total sales.
 object Q3_find_totSale {
   def main(args: Array[String]): Unit = {
-    Logger.getLogger("org").setLevel(Level.OFF)
+   // Logger.getLogger("org").setLevel(Level.OFF)
     val spark = SparkSession.builder().appName("OrderDataExample").master("local").getOrCreate()
 
     import spark.implicits._

@@ -20,7 +20,7 @@ object read_Mode_example {
                  .option("header",true)
                //  .option("inferschema",true)
                  .schema(localschema)
-                 .option("mode", "DROPMALFORMED")  // DROPMALFORMED , FAILFAST, PERMISSIVE
+                 .option("mode", "FAILFAST")  // DROPMALFORMED , FAILFAST, PERMISSIVE
                  .option("Path","C:/Users/dell/Desktop/salunke/salunkeage.csv")
                  .load()
 

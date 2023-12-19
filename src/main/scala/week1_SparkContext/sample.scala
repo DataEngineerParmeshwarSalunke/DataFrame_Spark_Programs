@@ -14,8 +14,9 @@ object sample {
 
     val wordsmap = words.map(x => (x, 1))
 
-    val wordcount = wordsmap.reduceByKey((x, y) => x + y)
+    val wordcount = wordsmap.reduceByKey((x, y) => x + y).sortBy(x => x._2)
 
+      wordcount.toDebugString.foreach(print)
    // words.collect.foreach( println )
     wordcount.collect.foreach( println )
     scala.io.StdIn.readLine()

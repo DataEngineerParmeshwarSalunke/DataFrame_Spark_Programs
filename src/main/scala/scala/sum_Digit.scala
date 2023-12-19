@@ -6,7 +6,7 @@ object sum_Digit {
     var num = scala.io.StdIn.readInt()
     var sum =0
     var rem = 0
-
+   //  num = 123
     while (num != 0){
       rem = num%10
       sum = sum+ rem
