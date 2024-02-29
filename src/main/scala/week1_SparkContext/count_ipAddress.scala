@@ -5,7 +5,7 @@ import org.apache.spark.SparkContext
 
 object  count_ipAddress {
   def main(args: Array[String]): Unit = {
-    Logger.getLogger("org").setLevel(Level.ERROR)
+   // Logger.getLogger("org").setLevel(Level.ERROR)
     val sc = new SparkContext("local[8]", "salunke")
 
     val input = sc.textFile("E:/salunkeprogram/ipaddress.txt");
@@ -22,7 +22,6 @@ object  count_ipAddress {
     val output =  words2.sortBy(x => x._2, false)
     val ipadd = output.take(2)
     output.collect.foreach(println)
-    println("total IP addresses :"+ words2.count())
 
     println("Top 5 IP addersses : ")
 

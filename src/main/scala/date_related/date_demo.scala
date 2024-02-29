@@ -9,7 +9,7 @@ object date_demo {
     val spark = SparkSession.builder().appName("date_Demo").master("local[*]").getOrCreate()
     import spark.implicits._
 
-    val date_df = List(("2023-08-25","15:30:00","2023-08-10")).toDF("date1","time_str","date2")
+    val date_df = List(("2020-04-30","15:30:00","2018-07-02")).toDF("date1","time_str","date2")
 
 //    val formatted_df = date_df.withColumn("new_date", to_date($"date_str"))
 //     .withColumn("new_time", to_timestamp($"time_str"))
@@ -19,7 +19,7 @@ object date_demo {
 //    formatted_df.printSchema()
 
    val date_diff = date_df.withColumn("Date_Diff", datediff($"date1",$"date2"))
-  //  date_diff.show()
+    date_diff.show()
 
     date_df.select(col("date1"), date_add($"date1",20)).show()
     date_df.select(col("date1"), date_sub($"date1",10)).show()

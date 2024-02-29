@@ -12,7 +12,7 @@ object parallel_Join {
       "orange")))
     val rdd2 = sc.parallelize(Array((1, "red"), (2, "yellow"), (4,
       "green")))
-    val joinedRdd = rdd1.join(rdd2)
+    val joinedRdd = rdd1.join(rdd2).sortBy(x => x._1)
     joinedRdd.foreach(println)
 
         scala.io.StdIn.readLine()
