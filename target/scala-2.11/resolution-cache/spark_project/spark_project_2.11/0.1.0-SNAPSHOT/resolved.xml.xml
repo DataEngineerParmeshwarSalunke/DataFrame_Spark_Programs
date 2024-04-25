@@ -4,7 +4,7 @@
 		module="spark_project_2.11"
 		revision="0.1.0-SNAPSHOT"
 		status="integration"
-		publication="20230808082257"
+		publication="20240305174426"
 	>
 		<description>
 		Spark_Project
@@ -36,5 +36,6 @@
 		<dependency org="org.scala-lang" name="scala-library" rev="2.11.12" conf="scala-tool->default,optional(default);compile->default(compile)"/>
 		<dependency org="org.apache.spark" name="spark-core_2.11" rev="2.4.4" conf="compile->default(compile)"/>
 		<dependency org="org.apache.spark" name="spark-sql_2.11" rev="2.4.4" conf="compile->default(compile)"/>
+		<dependency org="org.mongodb" name="mongo-java-driver" rev="2.11.2" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

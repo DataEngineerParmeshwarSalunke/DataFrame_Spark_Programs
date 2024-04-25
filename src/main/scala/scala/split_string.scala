@@ -11,7 +11,7 @@ object split_string {
     println()
     str1.reverse.foreach(s => print(s+" "))
     println()
-    for(i <- str1.length-1 until(0) by -1){
+    for(i <- str1.length-1 to(0) by -1){
 
       print(str1(i) + " ")
     }

@@ -8,3 +8,7 @@ lazy val root = (project in file("."))
   )
 libraryDependencies += "org.apache.spark" %% "spark-core" % "2.4.4"
 libraryDependencies += "org.apache.spark" %% "spark-sql" % "2.4.4"
+
+// https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver
+libraryDependencies += "org.mongodb" % "mongo-java-driver" % "2.11.2"
+

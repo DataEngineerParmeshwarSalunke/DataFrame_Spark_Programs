@@ -2,7 +2,7 @@ package scala
 
 object find_PairsOfSum {
   def main(args: Array[String]): Unit = {
-    var s=' '
+    var s = ' '
     do {
       val arr = Array(1, 2, 3, 5, 6, 8, 10, 11) //array must be in distinct and sorted
       val len = arr.length - 1
@@ -21,9 +21,5 @@ object find_PairsOfSum {
           high = high - 1
         }
       }
-      println("There are no pairs of summation value")
-      println("Do you want to continue press 'y' otherwise press 'n' ")
-      s=scala.io.StdIn.readChar()
     }while(s=='y' || s=='Y')
-  }
-}
+  }}

@@ -1,7 +1,7 @@
 package groupBy_Prog
 
 import org.apache.spark.sql.SparkSession
-import org.apache.spark.sql.functions.{avg, max, sum}
+import org.apache.spark.sql.functions.{avg, col, max, sum}
 /*Finding the average score for each subject and the maximum score for each student. */
 import org.apache.log4j.{Level, Logger}
 
@@ -16,9 +16,9 @@ object Q6_tot_sale_yealy {
     import spark.implicits._
 
     val data = List(
-      (1, "ProductA", "Electronics", 1000.0,"2023"),
+      (1, null, "Electronics", 1000.0,"2023"),
       (2, "ProductB", "Clothing", 500.0,"2022"),
-      (3, "ProductC", "Electronics", 800.0,"2022"),
+      (3, "ProductC", "Electronics", null,"2022"),
       (4, "ProductD", "Clothing", 300.0,"2023"),
       (5, "ProductE", "Electronics", 1200.0,"2022"),
       (6, "ProductF", "Clothing", 1000.0,"2022"),
@@ -29,6 +29,14 @@ object Q6_tot_sale_yealy {
     val groupedDF  = data.groupBy("product","year")
     val result = groupedDF.agg(sum("sales").as("total_revenue"))
     result.show()
+    val counts = data.count()
+    println(counts)
+    val c = data.columns
+    for(i<-c){
+     // print(i+" ")
+      val count_null = data.filter(col(i).isNull).count()
+      println("the"+ i + " have nulls = "+ count_null)
 
+    }
   }
 }

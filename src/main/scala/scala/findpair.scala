@@ -21,7 +21,7 @@ object findpair {
     }
     val nums = Array(2, 7, 11, 15)
     val target = 9
-    twoSum(nums, target)
+   // twoSum(nums, target)
    val output = twoSum(nums, target)
     println(output.mkString("[", ",", "]"))
    // println(output)
